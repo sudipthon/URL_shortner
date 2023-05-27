@@ -1,0 +1,17 @@
+body{background-color: rgb(215, 199, 199);}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.shorten{
+    border: none;
+    background-color: white;
+    pad: 5px;
+}
+.shortened_url{
+    border: none;
+    background-color: white;
+    /* padding: 2px; */
+text-align: center;
+}

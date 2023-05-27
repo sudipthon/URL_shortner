@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="url">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <label for="link">Link:</label>
+          <input type="text" name="link" id="link" placeholder="your link" />
+          <input onclick="CopyToClipboard('short_url')" type="submit" value="Shorten" id="shorten" />
+        </form>
+      </div>
+      {% if page == 'shortened' %}
+      <p>Short Url:</p>
+      <div class="shortened_url">
+        <button onclick="copyText">
+          <p id="short_url">
+            http://127.0.0.1:8000/{{shortened_url}}
+          </p>
+        </button>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+  <script>
+    // const short_url=document.getElementById('short_url');
+    // const btnCopy=document.getElementById('shorten');
+    // btnCopy.onclick=function(){
+    //     short_url.select();
+    //     document.execCommand('copy');
+    // };
+    function CopyToClipboard(id) {
+      var r = document.createRange();
+      r.selectNode(document.getElementById(id));
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(r);
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+    }
+  </script>
+</html>
