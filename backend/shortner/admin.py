@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import URL,Counter
+from .models import URL
 
 
 admin.site.register(URL)
-admin.site.register(Counter)
+# admin.site.register(Counter)
