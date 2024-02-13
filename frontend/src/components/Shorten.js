@@ -1,12 +1,13 @@
 import { useState } from "react";
-
+import React from 'react';
 function Shorten() {
   let host = window.location.origin;
   const [url, setUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
 
   const shortenUrl = () => {
-    fetch("http://127.0.0.1:8000/", {
+    // fetch("http://127.0.0.1:8000/", {
+    fetch("https://bug12.pythonanywhere.com/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

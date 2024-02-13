@@ -1,5 +1,5 @@
 import "./App.css";
-
+import React from 'react';
 import Shorten from "./components/Shorten";
 import Redirect from "./components/Redirect";
 
