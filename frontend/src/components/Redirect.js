@@ -11,7 +11,8 @@ export default function Redirect() {
     const fetchUrl = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/short/${redirect}`,
+          // `http://127.0.0.1:8000/short/${redirect}`,
+          `https://bug12.pythonanywhere.com/short/${redirect}`,
           {
             method: "GET",
             headers: {
